@@ -18,6 +18,7 @@ const TheSuperTeam = ({ team }: SuperTeamProps): JSX.Element => {
                 height={person.appearance.height}
                 weight={person.appearance.weight}
                 lg={person.images.lg}
+                powerstats={person.powerstats}
             />
         )
     });
