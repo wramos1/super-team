@@ -1,0 +1,31 @@
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    border: 1px solid blue;
+    display: flex;
+}
+
+.flip-card-inner {
+    display: flex;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background: beige;
+}
+
+.flip-card-back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    border: 2px solid red;
+}

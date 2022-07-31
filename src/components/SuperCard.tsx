@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../styles/Card.css'
 
 interface SuperCardProps {
     name: string;
@@ -46,9 +47,9 @@ const SuperCard = ({ name, fullName, alignment, height, weight, lg, powerstats }
     }
 
     return (
-        <div>
-            <div>
-                <div>  {/* Front of Card */}
+        <div className='flip-card'>
+            <div className='flip-card-inner'>
+                <div className='flip-card-front'>  {/* Front of Card */}
                     <h2>Power Level:  {powerLevel(powerstats)}</h2>
                     <img src={lg} alt={name} />
                     <h1>
@@ -56,7 +57,7 @@ const SuperCard = ({ name, fullName, alignment, height, weight, lg, powerstats }
                     </h1>
                 </div>
 
-                <div> {/* Back of Card */}
+                <div className='flip-card-back'> {/* Back of Card */}
                     <img src={lg} alt={`small ${name}`} />
                     <h2>Name: {fullName}</h2>
                     <span>{checkHeroStatus(alignment)}</span>
