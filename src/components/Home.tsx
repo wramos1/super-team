@@ -1,12 +1,19 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import supe from '../apis/supe'
 import SuperPerson from '../models/superPerson';
+import TheSuperTeam from './TheSuperTeam';
 
 const Home = () => {
+    //UseState to contain data pertaining to My Team
     const [team, setTeam] = useState<SuperPerson[]>([]);
 
+    //UseEffect renders the data from API calls on initial render
+    useEffect(() => {
+        fetchSuperTeam();
+    }, [])
 
+    //API calls with different Params
     const getSpidey = supe.get('', {
         params: {
             hero: 'Spiderman'
@@ -36,10 +43,12 @@ const Home = () => {
         }
     })
 
-    const superAPIList = [getSpidey, getDeadpool, getFlash, getScarletWitch, getSilverSurfer]
+    //Array of API calls to simplify async function below
+    const superAPIList = [getSpidey, getDeadpool, getFlash, getScarletWitch, getSilverSurfer];
 
 
-    const handleClick = async (): Promise<void> => {
+    //Function to combine data from all API calls and store them in UseState team
+    const fetchSuperTeam = async (): Promise<void> => {
         const res = await Promise.all(superAPIList.map(async (item) => {
             return (await item).data
         }));
@@ -47,16 +56,9 @@ const Home = () => {
         setTeam(res);
     };
 
-    function check() {
-        console.log(team)
-    }
-
     return (
         <div>
-            <button onClick={handleClick}>
-                Click
-            </button>
-            <button onClick={check}>Check</button>
+            <TheSuperTeam team={team} />
         </div>
     )
 }
