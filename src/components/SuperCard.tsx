@@ -49,6 +49,7 @@ const SuperCard = ({ name, fullName, alignment, height, weight, lg, powerstats }
     return (
         <div className='flip-card'>
             <div className='flip-card-inner'>
+
                 <div className='flip-card-front'>  {/* Front of Card */}
                     <h2>Power Level:  {powerLevel(powerstats)}</h2>
                     <img src={lg} alt={name} />
@@ -70,6 +71,7 @@ const SuperCard = ({ name, fullName, alignment, height, weight, lg, powerstats }
                         {loopPower(powerstats)}
                     </ul>
                 </div>
+
             </div>
         </div>
     )

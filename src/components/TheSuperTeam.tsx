@@ -1,6 +1,7 @@
 import React from 'react';
 import SuperPerson from '../models/superPerson';
 import SuperCard from './SuperCard';
+import '../styles/CardContainer.css'
 
 interface SuperTeamProps {
     team: SuperPerson[]
@@ -8,7 +9,7 @@ interface SuperTeamProps {
 
 const TheSuperTeam = ({ team }: SuperTeamProps): JSX.Element => {
 
-    const mapTeam = team.map(person => {
+    const mapTeam = team.map((person: SuperPerson) => {
         return (
             <SuperCard
                 key={person.id}
@@ -23,9 +24,13 @@ const TheSuperTeam = ({ team }: SuperTeamProps): JSX.Element => {
         )
     });
 
+    let totalPower = team.reduce((accum: number, person: SuperPerson): number => {
+        return accum + Object.values(person.powerstats).reduce((a, b) => a + b);
+    }, 0)
+
     const renderTeam = (): JSX.Element | undefined => {
         if (team) {
-            return <div>{mapTeam}</div>
+            return <div id='cardContainer'>{mapTeam}</div>
         }
         else if (team === undefined) {
             return <h1>Loading</h1>
@@ -34,6 +39,10 @@ const TheSuperTeam = ({ team }: SuperTeamProps): JSX.Element => {
 
     return (
         <div>
+            <h1 id='teamLevel'>
+                Team Power: {totalPower}
+            </h1>
+
             {renderTeam()}
         </div>
     )
