@@ -1,0 +1,16 @@
+#teamLevel {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+#cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10%;
+    row-gap: 15px;
+}
