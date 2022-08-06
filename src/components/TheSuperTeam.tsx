@@ -1,49 +1,64 @@
-import React from 'react';
+import React from 'react'
+import { useState, useEffect } from 'react';
+import supe from '../apis/supe'
 import SuperPerson from '../models/superPerson';
-import SuperCard from './SuperCard';
-import '../styles/CardContainer.css'
+import Team from './Team';
 
-interface SuperTeamProps {
-    team: SuperPerson[]
-}
+const TheSuperTeam = () => {
+    //UseState to contain data pertaining to My Team
+    const [team, setTeam] = useState<SuperPerson[]>([]);
 
-const TheSuperTeam = ({ team }: SuperTeamProps): JSX.Element => {
+    //UseEffect renders the data from API calls on initial render
+    useEffect(() => {
+        fetchSuperTeam();
+    }, [])
 
-    const mapTeam = team.map((person: SuperPerson) => {
-        return (
-            <SuperCard
-                key={person.id}
-                name={person.name}
-                fullName={person.biography.fullName}
-                alignment={person.biography.alignment}
-                height={person.appearance.height}
-                weight={person.appearance.weight}
-                lg={person.images.lg}
-                powerstats={person.powerstats}
-            />
-        )
+    //API calls with different Params
+    const getSpidey = supe.get('', {
+        params: {
+            hero: 'Spiderman'
+        }
     });
 
-    let totalPower = team.reduce((accum: number, person: SuperPerson): number => {
-        return accum + Object.values(person.powerstats).reduce((a, b) => a + b);
-    }, 0)
+    const getDeadpool = supe.get('', {
+        params: {
+            hero: 'Deadpool'
+        }
+    })
 
-    const renderTeam = (): JSX.Element | undefined => {
-        if (team) {
-            return <div id='cardContainer'>{mapTeam}</div>
+    const getFlash = supe.get('', {
+        params: {
+            hero: 'Flash'
         }
-        else if (team === undefined) {
-            return <h1>Loading</h1>
+    })
+
+    const getScarletWitch = supe.get('', {
+        params: {
+            hero: 'Scarlet Witch'
         }
-    }
+    })
+    const getSilverSurfer = supe.get('', {
+        params: {
+            hero: 'Silver Surfer'
+        }
+    })
+
+    //Array of API calls to simplify async function below
+    const superAPIList = [getSpidey, getDeadpool, getFlash, getScarletWitch, getSilverSurfer];
+
+
+    //Function to combine data from all API calls and store them in UseState team
+    const fetchSuperTeam = async (): Promise<void> => {
+        const res = await Promise.all(superAPIList.map(async (item) => {
+            return (await item).data
+        }));
+
+        setTeam(res);
+    };
 
     return (
         <div>
-            <h1 id='teamLevel'>
-                Team Power: {totalPower}
-            </h1>
-
-            {renderTeam()}
+            <Team team={team} />
         </div>
     )
 }
