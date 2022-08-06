@@ -2,10 +2,16 @@
     display: inline-block;
     text-align: center;
     width: 100%;
-    color: white;
+    margin: 5px auto;
+    color: rgb(196, 70, 228);
+}
+
+#teamLevel span {
+    display: block;
 }
 
 #cardContainer {
+    height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

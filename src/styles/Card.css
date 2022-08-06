@@ -5,9 +5,11 @@
     height: 450px;
     perspective: 1000px;
     flex-basis: 25%;
+    border-radius: 15px;
 }
 
-.flip-card {
+/* Colorful Border(Commented Out Due To Lag Issues */
+/* .flip-card {
     z-index: 0;
     overflow: hidden;
     padding: 1px;
@@ -49,7 +51,7 @@
     height: calc(100% - 12px);
     background: black;
     border-radius: 5px;
-}
+} */
 
 
 .flip-card-inner {
@@ -63,12 +65,14 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgb(196, 70, 228);
 }
 
 .flip-card-front {
     background: black;
-    color: white;
+    color: rgb(196, 70, 228);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -76,21 +80,85 @@
     justify-content: space-between;
 }
 
+.flip-card-front h1 {
+    color: white;
+}
+
 .flip-card-front img {
-    width: 200px;
+    width: 60%;
+    border-radius: 10px;
+    border: 2px solid rgb(196, 70, 228);
 }
 
 .flip-card-back {
     background-color: black;
     transform: rotateY(180deg);
     display: flex;
+    flex-direction: column;
+    color: rgb(196, 70, 228);
+    height: 100%;
 }
 
-.flip-card-back img {
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.profile h2 {
+    margin: 0 auto;
+    letter-spacing: 4px;
+}
+
+.profile img {
     width: 50%;
     height: 50%;
     border-radius: 50%;
+    border: 2px solid rgb(196, 70, 228);
 }
+
+.hero-details {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-details h4 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-grid-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 5px auto 0 auto;
+}
+
+.hero-grid-stats li {
+    color: rgb(196, 70, 228);
+    font-weight: 900;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(196, 70, 228);
+}
+
+.hero-grid-stats li span {
+    padding-left: 3px;
+}
+
 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);

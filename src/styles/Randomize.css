@@ -1,0 +1,92 @@
+#randomizeForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin: 8px 30%;
+}
+
+#randomizeForm input {
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0 0 0 1px rgb(255, 255, 255);
+    appearance: none;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(0, 0, 0);
+}
+
+#randomizeForm input:checked {
+    background-color: rgb(196, 70, 228);
+    animation: 1 select-radio 0.1s;
+    animation-timing-function: linear;
+}
+
+#randomizeForm input:checked+label {
+    color: rgb(196, 70, 228);
+}
+
+#randomizeForm label {
+    color: white;
+    font-size: 1.2em;
+}
+
+#randomizeForm label:hover {
+    color: rgb(196, 70, 228);
+    cursor: pointer;
+}
+
+#randomizer {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: rgb(196, 70, 228);
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgb(196, 70, 228);
+    font-size: 1.02rem;
+}
+
+#randomizer:hover {
+    transform: scale(1.1);
+}
+
+#typeDisplayer {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 5px auto;
+    color: rgb(196, 70, 228);
+}
+
+@keyframes select-radio {
+    0% {
+        box-shadow:
+            0 0 0 0 rgb(196, 70, 228),
+            inset 0 0 0 2px rgb(196, 70, 228),
+            inset 0 0 0 3px rgb(196, 70, 228),
+            inset 0 0 0 16px rgb(196, 70, 228),
+            inset 0 0 0 16px rgb(196, 70, 228);
+    }
+
+    90% {
+        box-shadow:
+            0 0 0 6px rgb(196, 70, 228),
+            inset 0 0 0 0 rgb(196, 70, 228),
+            inset 0 0 0 1px rgb(196, 70, 228),
+            inset 0 0 0 2px rgb(196, 70, 228),
+            inset 0 0 0 16px rgb(196, 70, 228);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 10px rgb(196, 70, 228),
+            inset 0 0 0 0 rgb(196, 70, 228),
+            inset 0 0 0 1px rgb(196, 70, 228),
+            inset 0 0 0 3px rgb(196, 70, 228),
+            inset 0 0 0 16px rgb(196, 70, 228);
+    }
+}
