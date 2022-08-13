@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import SuperPerson from '../models/superPerson';
 import supe from '../apis/supe';
 import Team from './Team';
@@ -31,7 +30,7 @@ const Randomize = () => {
         }, 150)
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (type === '') {
             alert('Please select a type')
@@ -95,7 +94,6 @@ const Randomize = () => {
             </h1>
 
             {visible && (<Team team={team} />)}
-            <div className="lastDiv"></div>
         </div>
     )
 }
