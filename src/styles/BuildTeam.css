@@ -1,0 +1,53 @@
+#userTeamInputList {
+    color: white;
+}
+
+
+#formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 3% auto;
+    font-size: 1.15em;
+}
+
+#buildTeamForm {
+    gap: 5px;
+    position: relative;
+}
+
+#buildTeamForm input {
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid rgb(196, 70, 228);
+    background-color: unset;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    min-width: 60vmin;
+    margin-right: 5px;
+}
+
+#buildTeamForm label {
+    cursor: pointer;
+    transform-origin: 0 0;
+    position: absolute;
+    left: 0;
+    color: rgb(241, 235, 235);
+}
+
+#buildTeamForm input:focus+label {
+    transform: translateY(-0.8em) scale(0.85);
+    color: rgb(218, 207, 207);
+}
+
+#buildTeamForm button {
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px 20px;
+}
