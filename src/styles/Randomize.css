@@ -46,7 +46,7 @@
     color: rgb(196, 70, 228);
     padding: 10px;
     border-radius: 15px;
-    border: 1px solid rgb(196, 70, 228);
+    border: 2px solid rgb(196, 70, 228);
     font-size: 1.02rem;
 }
 
@@ -88,5 +88,17 @@
             inset 0 0 0 1px rgb(196, 70, 228),
             inset 0 0 0 3px rgb(196, 70, 228),
             inset 0 0 0 16px rgb(196, 70, 228);
+    }
+}
+
+@media (max-width: 700px) {
+    #randomizeForm {
+        margin: 10px 20%;
+    }
+}
+
+@media (max-width: 550px) {
+    #randomizeForm {
+        margin: 10px 5%;
     }
 }
