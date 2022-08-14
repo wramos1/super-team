@@ -26,7 +26,7 @@ const BuildTeam = () => {
             if (callErrors.length > 0) {
                 setTeamVisible(false);
                 for (const index in callErrors) {
-                    alert(`${persons[callErrors[index].dex].name} could not be found you duh dur dur`)
+                    alert(`${persons[callErrors[index].dex].name} could not be found`)
                 }
             } else {
                 setTeamVisible(true);
@@ -61,7 +61,7 @@ const BuildTeam = () => {
                 <button
                     onClick={() => deletePerson(id)}
                 >
-                    Delete
+                    X
                 </button>
             </li>
         )
@@ -134,12 +134,12 @@ const BuildTeam = () => {
             </div>
 
 
-            <div id='userTeamInputList'>
+            <ul id='userTeamInputList'>
                 {renderPeople}
-            </div>
+            </ul>
 
-            <button onClick={renderTeamCall}>
-                RenderTeam
+            <button onClick={renderTeamCall} id='callSupers'>
+                Call Supers
             </button>
 
             {teamVisible && (<Team team={team} />)}

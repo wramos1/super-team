@@ -9,10 +9,10 @@ interface SuperTeamProps {
 
 const Team = ({ team }: SuperTeamProps): JSX.Element => {
 
-    const mapTeam = team.map((person: SuperPerson) => {
+    const mapTeam = team.map((person: SuperPerson, i) => {
         return (
             <SuperCard
-                key={person.id}
+                key={person.id + i}
                 name={person.name}
                 fullName={person.biography.fullName}
                 alignment={person.biography.alignment}
@@ -29,11 +29,7 @@ const Team = ({ team }: SuperTeamProps): JSX.Element => {
     }, 0)
 
     const renderTeam = (): JSX.Element | null => {
-
-        if (null) {
-            return <div>wasssssup</div>
-        }
-        else if (team.length === 0) {
+        if (team.length === 0) {
             return <div className='spinner'></div>
         }
         return (
