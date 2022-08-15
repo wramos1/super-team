@@ -1,46 +1,7 @@
-# Getting Started with Create React App
+# Super Team
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project utilizes a SuperHero API in order to extract the data to construct a team of 5 supers individually rendered with a Card component. The card displays the Supers stats and basic information. The component ultimately adds up the Super's stats into a power level displayed at the top of the card. It then accumulates the power levels of the whole team to give the team an overall power level. 
 
-## Available Scripts
+The Randomize Team page allows users to randomize a team of either heroes, villains, or a mixture of the two. The Build Team component presents users with a input form in which they can input a Super's name to construct their Super Team of five. If they attempt to render the team before sufficing the right amount of teammates or input an unknown name, the web app will alert the user with the proper error. 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Technologies Used: React, Typescript, HTML, CSS_
