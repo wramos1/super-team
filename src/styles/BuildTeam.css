@@ -78,7 +78,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 150px;
+    width: 175px;
     color: rgb(196, 70, 228);
     background-color: black;
     border: 2px solid rgb(196, 70, 228);
@@ -118,7 +118,7 @@
 @media (max-width: 800px) {
     #userTeamInputList {
         flex-wrap: wrap;
-        margin: 0 7%;
+        margin: 0 12%;
         gap: 12px;
     }
 }

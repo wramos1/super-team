@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Navbar.css'
 
 const Navbar = () => {
+
+    const [tab, setTab] = useState<string>('Home');
 
     useEffect(() => {
         tabSelecting();
@@ -26,6 +28,7 @@ const Navbar = () => {
                 }
 
                 tabs[i].classList.add('active');
+                setTab(tabs[i].innerHTML)
 
             })
         };
@@ -38,6 +41,11 @@ const Navbar = () => {
 
     return (
         <div id='navbar'>
+
+            <div className='current-tab'>
+                {tab}
+            </div>
+
 
             <ul className="nav-menu">
                 <li className="nav-item">
