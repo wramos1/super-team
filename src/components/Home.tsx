@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { TabContext } from '../models/TabContext';
 import '../styles/Home.css';
 import supers from '../supers.png';
 
 const Home = () => {
+    const { setTab } = useContext(TabContext);
 
     useEffect(() => {
         tabSelecting();
@@ -22,12 +24,15 @@ const Home = () => {
                     previousSelects[0].className = previousSelects[0].className.replace('active', '');
                 }
                 if (i === 0) {
+                    setTab(navTabs[2].innerHTML);
                     navTabs[2].classList.add('active');
                 }
                 else if (i === 1) {
+                    setTab(navTabs[3].innerHTML);
                     navTabs[3].classList.add('active');
                 }
                 else if (i === 2) {
+                    setTab(navTabs[1].innerHTML);
                     navTabs[1].classList.add('active');
                 }
             })
@@ -59,8 +64,6 @@ const Home = () => {
                     View my (THE) Super-Team
                 </Link>
             </div>
-
-            <h6>Does your super-team beat mine?</h6>
         </div>
     )
 }

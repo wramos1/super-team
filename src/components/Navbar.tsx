@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { TabContext } from '../models/TabContext'
 import '../styles/Navbar.css'
 
 const Navbar = () => {
-
-    const location = useLocation();
-
-    const [tab, setTab] = useState<string>('Home');
+    const { tab, setTab } = useContext(TabContext);
 
     useEffect(() => {
         tabSelecting();
-        console.log('useeffect ran')
     }, [])
 
     const tabSelecting = () => {
